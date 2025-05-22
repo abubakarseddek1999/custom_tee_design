@@ -33,6 +33,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=500",
     category: "sleevie",
   },
+  
 ]
 
 export function FeaturedProducts() {
