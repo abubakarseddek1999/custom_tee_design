@@ -167,7 +167,7 @@ export function ImageTransition() {
       </AnimatePresence>
 
       {/* Navigation arrows */}
-      <button
+      {/* <button
         onClick={prevImage}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-blue-600/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600/70 transition-colors z-10"
         disabled={isAnimating}
@@ -180,10 +180,10 @@ export function ImageTransition() {
         disabled={isAnimating}
       >
         →
-      </button>
+      </button> */}
 
       {/* Progress dots only - removed horizontal line */}
-      <div className="absolute bottom-8 left-0 w-full px-8">
+      {/* <div className="absolute bottom-8 left-0 w-full px-8">
         <div className="flex justify-center mt-4 space-x-2">
           {images.map((_, index) => (
             <button
@@ -198,7 +198,7 @@ export function ImageTransition() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
