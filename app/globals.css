@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Theme variants */
+.theme-default {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #2563eb;
+  --border-color: #e5e7eb;
+}
+
+.theme-dark {
+  --bg-color: #1e3a8a;
+  --text-color: #f9fafb;
+  --accent-color: #3b82f6;
+  --border-color: #374151;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-dark button:not([class*="bg-"]) {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.theme-dark input,
+.theme-dark textarea {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.theme-colorful {
+  --bg-color: #eff6ff;
+  --text-color: #1e3a8a;
+  --accent-color: #3b82f6;
+  --border-color: #93c5fd;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-colorful button:not([class*="bg-"]) {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.theme-colorful input,
+.theme-colorful textarea {
+  background-color: #fff;
+  border-color: #93c5fd;
+}
+
+/* Frame-based transition animation */
+@keyframes frame-reveal {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.frame-reveal {
+  animation: frame-reveal 0.7s ease-out forwards;
+}
+
+/* Product selector styles */
+.product-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-option.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.product-option:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-color, #3b82f6);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-color, #3b82f6);
+  cursor: pointer;
+}
+
+.theme-dark input[type="range"] {
+  background: #4b5563;
+}
+
+.theme-colorful input[type="range"] {
+  background: #fcd34d;
+}
